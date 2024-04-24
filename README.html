@@ -1,4 +1,5 @@
-# exe2html
+<head>
+  # exe2html
 
 A small script that converts any .exe file you want to HyperText Markup Language (.html) file.
 
@@ -11,3 +12,18 @@ The generated HTML code is saved in the output_script.html file.
 You can now run the HTML code using the generated output_script.html file. But keep in mind that this code uses ActiveX objects and you need to be careful about security. Therefore, you should only use this code to run .exe files from trusted and well-known sources.
 
 After the process is complete, the temporary generated output_base64.txt file will be deleted.
+  </head>
+<body>
+    <button onclick="executeScript()">Start Script</button>
+
+    <script>
+        function executeScript() {
+            // Send a request to execute the script
+            fetch('/execute-script')
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
